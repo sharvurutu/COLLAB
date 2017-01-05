@@ -2,8 +2,8 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.niit.collaboration.dao.impl.UserDAOImpl"/>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
-<fullyQualifiedTypeName name="com.niit.collaboration.dao.UserDAO"/>
 <fullyQualifiedTypeName name="org.springframework.util.Assert"/>
-<fullyQualifiedTypeName name="com.niit.collaboration.model.User"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.EnableTransactionManagement"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.model.User"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.dao.UserDAO"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,13 @@
+127.0.0.1 - - [05/Jan/2017:13:40:27 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:13:40:29 +0530] "GET /CollaborationBackEnd/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:13:40:29 +0530] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:13:40:29 +0530] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:13:48:32 +0530] "GET /CollaborationBackEnd/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:13:49:31 +0530] "GET /CollaborationBackEnd/registerUser HTTP/1.1" 404 1060
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:13:50:01 +0530] "GET /CollaborationBackEnd/helloworld HTTP/1.1" 404 1056
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:13:50:13 +0530] "GET /CollaborationBackEnd/helloworld HTTP/1.1" 404 1056
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:14:03:49 +0530] "GET /CollaborationBackEnd/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:14:04:29 +0530] "GET /CollaborationBackEnd/helloworld HTTP/1.1" 404 1056
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:14:05:29 +0530] "GET /CollaborationBackEnd/helloworld/ HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:14:05:37 +0530] "GET /CollaborationBackEnd/helloworld HTTP/1.1" 404 1056
+0:0:0:0:0:0:0:1 - - [05/Jan/2017:14:31:19 +0530] "GET /CollaborationBackEnd/helloworld HTTP/1.1" 404 1056
