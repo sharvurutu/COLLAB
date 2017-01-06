@@ -16,6 +16,14 @@ public interface UserDAO {
 	
 	public User IsValidUser(String id, String password);
 	
-	public List<User> list();	
+	public List<User> list();
+/*
+	public User authenticate(String id, String password);
+
+	public void setOnline(String id);
+
+	public void setOffLine(String loggedInUserID);
+*/
+
 
 }

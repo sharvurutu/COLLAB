@@ -98,7 +98,22 @@ public class UserDAOImpl implements UserDAO {
 				return null;
 			}
 		}
+
+	/*public User authenticate(String id, String password) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	public void setOnline(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setOffLine(String loggedInUserID) {
+		// TODO Auto-generated method stub
+		*/
+	}
+	
 
 
 

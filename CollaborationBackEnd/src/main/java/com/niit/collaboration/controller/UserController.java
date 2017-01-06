@@ -23,6 +23,9 @@ public class UserController {
 	@Autowired
 	UserDAO userDAO;
 
+	// Get List of all users
+	// http://localhost:8080/collaboration/allusers
+
 	// headers="Accept=application/json"
 	@RequestMapping(value = "/helloworld", method = RequestMethod.GET)
 
@@ -30,8 +33,6 @@ public class UserController {
 		return "Hello";
 	}
 
-	// Get List of all users
-	// http://localhost:8080/collaboration/allusers
 	@RequestMapping(value = "/allUsers", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUser() {
 		List<User> users = userDAO.list();
@@ -67,10 +68,10 @@ public class UserController {
 	// http://localhost:8080/collaboration/allusers/id/password
 	// Instead of Request mapping POST method we can use
 	// @PostMapping("authenticate") also
-	// sending values from request body--- {"Id":"101", "password":"12345"}
+	// sending values from request body--- {"emailId":"abc", "password":"xyz"}
 
 	/*
-	 * @RequestMapping(value = "/authenticate/{Id}/{password}", method =
+	 * @RequestMapping(value = "/authenticate/{emailId}/{password}", method =
 	 * RequestMethod.POST)
 	 */
 	@RequestMapping(value = "/authenticate/", method = RequestMethod.POST)
@@ -80,7 +81,7 @@ public class UserController {
 		if (user == null) {
 			user = new User();// to avoid NullPointerException
 			user.setErrorCode("404");
-			user.setErrorMessage("Invalid Credentials");
+			user.setErrorMessage("Invalid Credentials,., Please Try Again");
 		}
 
 		return new ResponseEntity<User>(user, HttpStatus.OK);
@@ -91,10 +92,10 @@ public class UserController {
 
 		if (userDAO.save(user) == false) {
 			user.setErrorCode("404");
-			user.setErrorMessage("Registration Unsuccessfull");
+			user.setErrorMessage("Registration Not Successful.,., Please try Again,.,!!,.,!!");
 		} else {
 			user.setErrorCode("200");
-			user.setErrorMessage("Thankyou for Registration...");
+			user.setErrorMessage("Thankyou for Registration !!..!!");
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
@@ -104,10 +105,10 @@ public class UserController {
 
 		if (userDAO.update(user) == false) {
 			user.setErrorCode("404");
-			user.setErrorMessage("Updation Unsuccessfull");
+			user.setErrorMessage("Update Not Successful.,., Please try Again,.,!!,.,!!");
 		} else {
 			user.setErrorCode("200");
-			user.setErrorMessage("Update is Successfull..");
+			user.setErrorMessage("Thankyou Update is Successful !!..!!");
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}

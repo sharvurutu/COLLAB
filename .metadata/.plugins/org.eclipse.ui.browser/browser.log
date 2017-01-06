@@ -4,3 +4,45 @@ Jan 04, 2017 23:05:52.64 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
 Jan 04, 2017 23:08:29.71 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
 Jan 04, 2017 23:08:48.81 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
 Jan 04, 2017 23:09:01.77 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+
+Jan 05, 2017 16:45:00.78 NEW SESSION
+Jan 05, 2017 16:45:00.78 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Jan 05, 2017 16:45:24.23 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Jan 05, 2017 16:49:12.73 console.warn: LoginHelper: dedupeLogins: Deduping with a scheme preference but couldn't get the preferred origin scheme.
+
+Jan 06, 2017 01:32:15.65 NEW SESSION
+Jan 06, 2017 01:32:15.65 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Jan 06, 2017 01:32:26.10 console.warn: LoginHelper: dedupeLogins: Deduping with a scheme preference but couldn't get the preferred origin scheme.
+Jan 06, 2017 01:37:45.48 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Jan 06, 2017 01:38:01.49 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Jan 06, 2017 01:40:49.83 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Jan 06, 2017 01:42:19.97 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Jan 06, 2017 01:44:38.16 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+
+Jan 06, 2017 13:25:08.54 NEW SESSION
+Jan 06, 2017 13:25:08.54 [GFX1-]: VendorIDMismatch V 0x8086 0x1414
+Jan 06, 2017 13:25:32.84 console.warn: LoginHelper: dedupeLogins: Deduping with a scheme preference but couldn't get the preferred origin scheme.
+Jan 06, 2017 13:25:33.39 console.warn: LoginHelper: dedupeLogins: Deduping with a scheme preference but couldn't get the preferred origin scheme.
+Jan 06, 2017 13:26:13.01 1483689373016	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Jan 06, 2017 13:33:09.10 1483689789102	addons.repository	WARN	Search failed when repopulating cache
+Jan 06, 2017 13:33:09.19 1483689789199	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Jan 06, 2017 13:33:09.20 1483689789200	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Jan 06, 2017 13:33:09.20 1483689789201	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Jan 06, 2017 13:33:09.20 1483689789202	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Jan 06, 2017 13:33:09.20 1483689789203	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Jan 06, 2017 13:33:09.20 1483689789204	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Jan 06, 2017 13:33:09.20 1483689789205	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Jan 06, 2017 13:33:09.20 1483689789208	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Jan 06, 2017 13:33:09.21 1483689789210	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Jan 06, 2017 13:33:09.21 1483689789212	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Jan 06, 2017 13:33:09.21 1483689789216	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Jan 06, 2017 13:33:09.22 1483689789220	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Jan 06, 2017 13:33:09.22 1483689789221	addons.manager	WARN	Failed to update system addons: Error: Failed downloading XML, status: 0, reason: error (resource://gre/modules/addons/ProductAddonChecker.jsm:111:16) JS Stack trace: downloadXML/</fail@ProductAddonChecker.jsm:111:16
+Jan 06, 2017 13:35:09.26 *************************
+Jan 06, 2017 13:35:09.26 A coding exception was thrown and uncaught in a Task.
+Jan 06, 2017 13:35:09.26 
+Jan 06, 2017 13:35:09.26 Full message: TypeError: NetworkError when attempting to fetch resource.
+Jan 06, 2017 13:35:09.26 Full stack: 
+Jan 06, 2017 13:35:09.26 *************************
+Jan 06, 2017 13:39:09.45 1483690149454	addons.xpi	WARN	Add-on mozilla_cc@internetdownloadmanager.com is not correctly signed.
+Jan 06, 2017 13:51:17.08 console.warn: LoginHelper: dedupeLogins: Deduping with a scheme preference but couldn't get the preferred origin scheme.
