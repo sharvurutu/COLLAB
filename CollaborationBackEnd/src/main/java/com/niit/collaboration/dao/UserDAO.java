@@ -12,11 +12,10 @@ public interface UserDAO {
 	
 	public boolean update(User user);
 	
-	public User get(String id);
+	public User get(String emaild);
 	
-	public User IsValidUser(String id, String password);
+	public User IsValidUser(String emailId, String password);
 	
-	public List<User> list();
-
+	public List<User> list();	
 
 }

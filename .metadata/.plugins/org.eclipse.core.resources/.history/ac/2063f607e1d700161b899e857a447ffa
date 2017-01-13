@@ -1,0 +1,55 @@
+package com.niit.collaboration.test;
+
+import org.junit.BeforeClass;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.collaboration.dao.UserDAO;
+import com.niit.collaboration.model.User;
+
+import junit.framework.Assert;
+
+public class UserTestCases {
+
+	@Autowired
+	static User user;
+	
+	@Autowired
+	static UserDAO userDAO;
+	
+	@Autowired
+	static AnnotationConfigApplicationContext context;
+	
+	
+	@BeforeClass
+	public static void init()
+	{
+		context = new AnnotationConfigApplicationContext();
+		context.scan("com.niit");
+		context.refresh();
+		userDAO = (UserDAO) context.getBean("userDAO");
+		user= (User) context.getBean("user");
+	}
+	
+	//@Test
+	public void CreateUserTestCase(){
+		user.setEmailId("rutu956177S@gmail.com");
+		user.setFname("Rutuja");
+		user.setLname("Bacchuwar");
+		user.setGender("Male");
+		user.setMobile("8796375371");
+		user.setPassword("rutuja");
+		user.setRole("Admin");
+		user.setReason("No Reason");
+		user.setIsOnline('N');
+		user.setStatus("N");
+		boolean status = userDAO.save(user);
+		
+		Assert.assertEquals("CreateUserTestCase", true, status);
+		
+	}
+	
+	
+}

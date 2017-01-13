@@ -2,6 +2,7 @@ package com.niit.collaboration.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.niit.collaboration.dao.UserDAO;
 import com.niit.collaboration.model.User;
 
+
+
 @RestController
 public class UserController {
 
@@ -23,15 +26,19 @@ public class UserController {
 	@Autowired
 	UserDAO userDAO;
 
-	@RequestMapping(value = "/helloworld", method = RequestMethod.GET)
-
-	public String Hello() {
-		return "Hello";
-	}
-
 	// Get List of all users
 	// http://localhost:8080/collaboration/allusers
-	@RequestMapping(value = "/allUsers", method = RequestMethod.GET)
+	
+	//headers="Accept=application/json"
+	@RequestMapping(value="/helloworld",method=RequestMethod.GET)
+	
+	public String Hello()
+	{
+		return "Hello";
+	}
+	
+	
+	@RequestMapping(value="/allUsers",method=RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUser() {
 		List<User> users = userDAO.list();
 
@@ -49,8 +56,8 @@ public class UserController {
 
 	// Get User by Id
 	// http://localhost:8080/collaboration/allusers/id
-
-	@RequestMapping(value = "/userById/{id}", method = RequestMethod.GET)
+	
+	@RequestMapping(value="/userById/{id}",method=RequestMethod.GET)
 	public ResponseEntity<User> getUserById(@PathVariable("id") String userEmailId) {
 		user = userDAO.get(userEmailId);
 
@@ -63,18 +70,24 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
 	// http://localhost:8080/collaboration/allusers/id/password
 	// Instead of Request mapping POST method we can use
 	// @PostMapping("authenticate") also
 	// sending values from request body--- {"emailId":"abc", "password":"xyz"}
-
-	/*
-	 * @RequestMapping(value = "/authenticate/{emailId}/{password}", method =
-	 * RequestMethod.POST)
-	 */
+	
+/*	@RequestMapping(value = "/authenticate/{emailId}/{password}", method = RequestMethod.POST)
+*/
 	@RequestMapping(value = "/authenticate/", method = RequestMethod.POST)
 	public ResponseEntity<User> authenticate(@RequestBody User user) {
-		user = userDAO.IsValidUser(user.getId(), user.getPassword());
+		user = userDAO.IsValidUser(user.getEmailId(), user.getPassword());
 
 		if (user == null) {
 			user = new User();// to avoid NullPointerException
@@ -85,10 +98,20 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value = "/registerUser/", method = RequestMethod.POST)
 	public ResponseEntity<User> registerUser(@RequestBody User user) {
+		
 
-		if (userDAO.save(user) == false) {
+		if (userDAO.save(user)==false) {
 			user.setErrorCode("404");
 			user.setErrorMessage("Registration Not Successful.,., Please try Again,.,!!,.,!!");
 		} else {
@@ -98,10 +121,12 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
+
 	@RequestMapping(value = "/UpdateUser", method = RequestMethod.PUT)
 	public ResponseEntity<User> updateUser(@RequestBody User user) {
+		
 
-		if (userDAO.update(user) == false) {
+		if (userDAO.update(user)==false) {
 			user.setErrorCode("404");
 			user.setErrorMessage("Update Not Successful.,., Please try Again,.,!!,.,!!");
 		} else {
@@ -110,5 +135,7 @@ public class UserController {
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
+
+
 
 }

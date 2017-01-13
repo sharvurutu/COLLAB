@@ -4,6 +4,20 @@
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="org.springframework.util.Assert"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.EnableTransactionManagement"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.dao.ChatDAO"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.model.Chat"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.model.Event"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.dao.EventDAO"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.model.Forum"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.dao.ForumDAO"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.model.Job"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.dao.JobDAO"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.model.JobApplication"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.dao.JobApplicationDAO"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.model.Friend"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.dao.FriendDAO"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.model.Blog"/>
+<fullyQualifiedTypeName name="com.niit.collaboration.dao.BlogDAO"/>
 <fullyQualifiedTypeName name="com.niit.collaboration.model.User"/>
 <fullyQualifiedTypeName name="com.niit.collaboration.dao.UserDAO"/>
 </qualifiedTypeNameHistroy>

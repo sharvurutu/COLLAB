@@ -1,194 +1,134 @@
-'use strict';
+/*"use strict"
+*//*
+app.controller('UserController',['$scope','UserServices','$location','$rootScope','$cookieStore','$http',
+                                 function($scope, $UserServices, $location, $rootScope, $cookieStore, $http){
+	*/
 
-app.controller(	'UserController', [	'$scope', 'UserService', '$location','$rootScope','$cookieStore',
-						'$http',
-						function($scope, UserService, $location, $rootScope,
-								$cookieStore,$http) {
-							console.log("UserController...")
-							var self = this;
-							self.user = {id : '',name : '', password : '',	mobile : '',
-								address : '', email : '',isOnline : '',	role : '',
-								errorCode : '',	errorMessage : ''
-							};
-							self.users = [];
-							
-							 $scope.orderByMe = function(x) {
-							        $scope.myOrderBy = x;
-							    }
-					
 
-							self.fetchAllUsers = function() {
-								console.log("fetchAllUsers...")
-								UserService
-										.fetchAllUsers()
-										.then(
-												function(d) {
-													self.users = d;
-												},
-												function(errResponse) {
-													console
-															.error('Error while fetching Users');
-												});
-							};
-							
-							//self.fatchAllUsers();
+app.controller('UserController',['$scope','UserServices','$location','$rootScope','$http',
+                                 function($scope, UserServices, $location, $rootScope, $http){
+	$scope.message="Message From User Contoller"
 
-							self.createUser = function(user) {
-								console.log("createUser...")
-								UserService
-										.createUser(user)
-										.then(
-												self.fetchAllUsers,
-												function(errResponse) {
-													console
-															.error('Error while creating User.');
-												});
-							};
-							
-							self.myProfile = function() {
-								console.log("myProfile...")
-								UserService
-										.myProfile()
-										.then(
-												function(d) {
-													self.user = d;
-													$location.path("/myProfile")
-												},
-												function(errResponse) {
-													console
-															.error('Error while fetch profile.');
-												});
-							};
-							
-							self.accept = function(id) {
-								console.log("accept...")
-								UserService
-										.accept(id)
-										.then(
-												function(d) {
-													self.user = d;
-													self.fetchAllUsers
-													$location.path("/manage_users")
-													alert(self.user.errorMessage)
-													
-												},
-												
-												function(errResponse) {
-													console
-															.error('Error while updating User.');
-												});
-							};
-							
-							self.reject = function( id) {
-								console.log("reject...")
-								var reason = prompt("Please enter the reason");
-								UserService
-										.reject(id,reason)
-										.then(
-												function(d) {
-													self.user = d;
-													self.fetchAllUsers
-													$location.path("/manage_users")
-													alert(self.user.errorMessage)
-													
-												},
-												null );
-							};
-
-							self.updateUser = function(user, id) {
-								console.log("updateUser...")
-								UserService
-										.updateUser(user, id)
-										.then(
-												self.fetchAllUsers,
-												null);
-							};
-
-							self.authenticate = function(user) {
-								console.log("authenticate...")
-								UserService
-										.authenticate(user)
-										.then(
-
-												function(d) {
-
-													self.user = d;
-													console
-															.log("user.errorCode: "
-																	+ self.user.errorCode)
-													if (self.user.errorCode == "404")
-
+										var self =this;
+									
+										self.user = {fname : '', lname : '', emailId : '', password : '', mobile : '', role : '', isOnline : '', status : '', errorCode : '',
+													 errorMessage : '', gender : '', reason: ''	};
+										
+										self.users = [];
+										
+										
+										//Start of fetchAllUsers function()
+										self.fetchAllUsers = function(){
+											UserServices.fetchAllUsers().then
+											    (
+														function(d){
+															self.users=d;
+														},
+														function(errResponse)
+														{
+															console.error("Error  While Getting all the Users detials,.,.,.")
+														}
+												)
+										};//end of fetchAllUsers function()
+									
+										
+										
+										
+										//start of createUser function()
+										self.createUser = function(user){
+											//console
+											UserServices.createUser(user).then
+											(
+													function(d)
 													{
-														alert(self.user.errorMessage)
-
-														self.user.id = "";
-														self.user.password = "";
-
-													} else { //valid credentials
-														console
-																.log("Valid credentials. Navigating to home page")
-														$rootScope.currentUser = self.user
-														$http.defaults.headers.common['Authorization'] = 'Basic '
-																+ $rootScope.currentUser;
-														$cookieStore
-																.put(
-																		'currentUser',
-																		$rootScope.currentUser);
-														$location.path('/');
-
+														alert("ThankYou For Registration,.,,,,")
+														//location
+													},
+													function(errResponse)
+													{
+														console.error("Error While Registration,,., Please try again after some time,.,")
 													}
-
-												},
-												function(errResponse) {
-
-													console
-															.error('Error while authenticate Users');
-												});
-							};
-
-							self.logout = function() {
-								console.log("logout")
-								$rootScope.currentUser = {};
-								$cookieStore.remove('currentUser');
-								UserService.logout()
-								$location.path('/');
-
-							}
-
-						
-
-							self.fetchAllUsers();
-
-							self.login = function() {
-								{
-									console.log('login validation????????',
-											self.user);
-									self.authenticate(self.user);
-								}
-
-							};
-
-							self.submit = function() {
-								{
-									console.log('Saving New User', self.user);
-									self.createUser(self.user);
-								}
-								self.reset();
-							};
-
-							self.reset = function() {
-								self.user = {
-									id : '',
-									name : '',
-									password : '',
-									mobile : '',
-									address : '',
-									email : '',
-									isOnline : '',
-									errorCode : '',
-									errorMessage : ''
-								};
-								$scope.myForm.$setPristine(); // reset Form
-							};
-
-						} ]);
+											)
+										};//end of createUser function()
+										
+										
+										
+										self.authenticate = function(user)
+										{
+											UserServices.authenticate(user).then
+											(
+													function(d)
+													{
+														self.user = d;
+														if(self.user.errorCode =="404")
+															{
+																alert(self.user.errorMessage)
+																self.emailId=''
+																self.password=''
+																
+															}
+														else
+															{
+																$rootScope.currentUser = self.user
+																$rootScope.IsLoggedIn="true"
+																$location.path('/createblog')
+															}
+													}
+											)
+										}
+										
+										
+										//start of myProfile function()
+										self.myProfile = function(){
+											UserServices.myProfile().then
+											(
+													function(d)
+													{
+														self.user=d;
+													},
+													function(errResponse)
+													{
+														console.error("Error While Fetching Profile,.,..,.")
+													}
+											)
+										}//end of myProfile function()
+										
+										
+										
+										
+										
+										//start of submit function()
+										self.submit = function() {
+											self.createUser(self.user);
+											self.reset();
+										};//end of submit function()
+										
+										
+										self.login = function()
+										{
+											self.authenticate(self.user)
+										}
+										
+										
+										
+										self.fetchAllUsers();
+										
+										//start of reset function
+										self.reset = function(){
+											self.user = {
+											fname : '',
+											lname : '',
+											emailId : '',
+											password : '',
+											mobile : '',
+											role : '',
+											isOnline : '',
+											status : '',
+											errorCode : '',
+										    errorMessage : '',
+										    gender : '',
+											reason: ''
+											}
+										};//end of reset funtion()
+											
+}])

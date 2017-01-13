@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>
+
+
+	<div ng-view></div>
+	<script src="resources/js/angular.js"></script>
+	<script src="resources/js/angular-route.js"></script>
+	<script src="resources/js/angular-cookies.js"></script>
+
+	<script src="app.js"></script>
+
+	<script src="c_user/UserController.js"></script>
+	<script src="c_user/UserService.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
